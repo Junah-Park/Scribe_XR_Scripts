@@ -10,6 +10,7 @@ public class Registration : MonoBehaviour
     public InputField nameField;
     public InputField passwordField;
     public Button submitButton;
+    public Text statusText;
 
     public void GoToMenu()
     {
@@ -32,11 +33,12 @@ public class Registration : MonoBehaviour
             if (www.downloadHandler.text == "0")
             {
                 Debug.Log("User created successfully.");
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(0);
             }
             else
             {
                 Debug.Log("User creation failed. Error #" + www.downloadHandler.text);
+                statusText.text = "User creation failed. Error #" + www.downloadHandler.text;
             }
         }
         // WWW www = new WWW("http://localhost/sqlconnect/register.php", form);

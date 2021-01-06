@@ -10,6 +10,7 @@ public class Login : MonoBehaviour
     public InputField nameField;
     public InputField passwordField;
     public Button submitButton;
+    public Text statusText;
     public string[] response;
     public void GoToMenu()
     {
@@ -41,6 +42,7 @@ public class Login : MonoBehaviour
             else
             {
                 Debug.Log("User login failed. Error #" + www.downloadHandler.text);
+                statusText.text = "User creation failed. Error #" + www.downloadHandler.text;
             }
         }
     }

@@ -87,4 +87,6 @@ public class Scribe : MonoBehaviour
         //After we have waited 5 seconds print the time again.
         fadeText.text = "";
     }
+
+    //pw: takoyakifbk
 }
