@@ -39,7 +39,7 @@ public class Scribe : MonoBehaviour
         form.AddField("message", messageField.text);
         form.AddField("id", DBManager.id);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/sqlconnect/savemessage.php", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://lit-citadel-61404.herokuapp.com/savemessage.php", form))
         {
             yield return www.SendWebRequest();
 
@@ -57,9 +57,9 @@ public class Scribe : MonoBehaviour
     }
     IEnumerator LoadMessage()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get("http://localhost/sqlconnect/loadmessage.php" + "?id=" + DBManager.id))
+        using (UnityWebRequest www = UnityWebRequest.Get("https://lit-citadel-61404.herokuapp.com/loadmessage.php" + "?id=" + DBManager.id))
         {
-            Debug.Log("http://localhost/sqlconnect/loadmessage.php" + "?id=" + DBManager.id);
+            Debug.Log("https://lit-citadel-61404.herokuapp.com/loadmessage.php" + "?id=" + DBManager.id);
             yield return www.SendWebRequest();
 
             if (www.downloadHandler.text[0] == '0')
